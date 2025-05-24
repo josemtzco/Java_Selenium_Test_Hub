@@ -7,7 +7,8 @@ import com.jmtech.webpages.pinterest.PinterestLoginPage;
 
 @Test
 public class PinterestLoginTest extends BaseUiTest {
-    
+
+
     @Test
     public void testValidLogin() {
         PinterestLoginPage loginPage = new PinterestLoginPage(getWebDriver());

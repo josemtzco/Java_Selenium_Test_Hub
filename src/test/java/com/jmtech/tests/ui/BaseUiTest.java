@@ -7,7 +7,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.jmtech.core.api.RestAssuredFactory;
 import com.jmtech.core.ui.actions.BasePageObject;
 import com.jmtech.core.webdriver.WebDriverFactory;
 import static com.jmtech.core.webdriver.WebDriverFactory.getWebDriver;
@@ -23,7 +22,6 @@ public class BaseUiTest {
     public void setUp() {
         log.info("Setting up in the Base UI Test");
         WebDriverFactory.createWebDriver("edge", false);
-        RestAssuredFactory.createRestAssured();
         WebDriver driver = getWebDriver();
         baseHelper = new BasePageObject(driver) {}; // anonymous subclass
     }
@@ -32,10 +30,10 @@ public class BaseUiTest {
         return baseHelper;
     }
 
-    @AfterMethod
+
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
         log.info("Tearing down in the Base UI Test");
         WebDriverFactory.quitWebDriver();
-        RestAssuredFactory.resetRestAssured();
     }
 }

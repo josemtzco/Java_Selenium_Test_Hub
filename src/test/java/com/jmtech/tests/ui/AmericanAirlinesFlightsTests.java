@@ -1,9 +1,9 @@
 package com.jmtech.tests.ui;
 
-import com.jmtech.webpages.aa.AASearchFlight;
 import org.testng.annotations.Test;
 
-import static com.jmtech.core.webdriver.WebDriverFactory.*;
+import static com.jmtech.core.webdriver.WebDriverFactory.getWebDriver;
+import com.jmtech.webpages.aa.AASearchFlight;
 
 @Test
 public class AmericanAirlinesFlightsTests extends BaseUiTest {
@@ -32,5 +32,7 @@ public class AmericanAirlinesFlightsTests extends BaseUiTest {
     public void verifySearchFlightRequiredFieldMessages() {
 
     }
+
+    
 
 }

@@ -1,18 +1,17 @@
 package com.jmtech.webpages.aa;
 
-import com.jmtech.core.ui.actions.BasePageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.jmtech.core.ui.actions.BasePageObject;
 import static com.jmtech.core.webdriver.WebDriverFactory.getWebDriver;
 
 public class AASearchFlight extends BasePageObject {
 
-    private String FINDFLIGHT_HEADER_CSS = "#findFlightsHeader";
-    private String inputFromCityCss = "adc-auto-complete#originAirport[label-text='From'] > input[type='text']";
-    private String departDateCss = "";
-    private String numberOfPassengersCss = "";
+    private final String FINDFLIGHT_HEADER_CSS = "#findFlightsHeader";
+    private final String inputFromCityCss = "adc-auto-complete#originAirport[label-text='From'] > input[type='text']";
+    private final String departDateCss = "";
 
     public AASearchFlight(WebDriver driver) {
         super(driver);

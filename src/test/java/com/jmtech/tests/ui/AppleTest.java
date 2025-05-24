@@ -1,18 +1,14 @@
 package com.jmtech.tests.ui;
 
-import com.jmtech.core.webdriver.WebDriverFactory;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import com.jmtech.core.webdriver.WebDriverFactory;
 import static com.jmtech.core.webdriver.WebDriverFactory.getWebDriver;
 
 @Test
 public class AppleTest extends BaseUiTest {
 
-    @BeforeMethod
-    public void setUp() {
-        WebDriverFactory.createWebDriver("edge", false);
-    }
 
     @Test
     public void googleTest() throws InterruptedException {
