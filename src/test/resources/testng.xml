@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="ParallelTestSuite" parallel="classes" thread-count="4">
+    <!-- Define the test suite -->
+    <test name="TestPackageExecution">
+        <packages>
+            <package name="com.jmtech.tests.ui"/>
+        </packages>
+    </test>
+</suite>

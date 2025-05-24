@@ -1,0 +1,48 @@
+services:
+  selenium-hub:
+    image: selenium/hub:4.0.0
+    ports:
+      - "4444:4444"
+      - "4442:4442"   # Event bus publish port
+      - "4443:4443"   # Event bus subscribe port
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"       # Reduced CPU for hub
+          memory: "512m"    # Reduced memory for hub
+
+  chrome:
+    image: selenium/node-chrome:4.0.0
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=4              # Allow multiple parallel sessions
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true  # Override default max sessions
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"       # Increased CPU for better performance
+          memory: "2g"      # Increased memory for Chrome
+
+  firefox:
+    image: selenium/node-firefox:4.0.0
+    volumes:
+     - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=4              # Allow multiple parallel sessions
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true  # Override default max sessions
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"       # Increased CPU for better performance
+          memory: "2g"      # Increased memory for Firefox
