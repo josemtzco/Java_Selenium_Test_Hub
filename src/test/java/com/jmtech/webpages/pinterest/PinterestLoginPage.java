@@ -3,10 +3,10 @@ package com.jmtech.webpages.pinterest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.jmtech.core.ui.actions.BasePageObject;
+import com.jmtech.core.ui.actions.UIInteractions;
 import static com.jmtech.core.webdriver.WebDriverFactory.getWebDriver;
 
-public class PinterestLoginPage extends BasePageObject {
+public class PinterestLoginPage extends UIInteractions {
     // Locators
     private final By emailInput = By.id("email");
     private final By passwordInput = By.id("password");

@@ -26,7 +26,7 @@ import org.openqa.selenium.WebDriver;
  *
  * @author josedash
  */
-public abstract class BasePageObject {
+public abstract class UIInteractions {
 
     private final WebDriver driver;
     private CommonInteractions commonInteractions;
@@ -34,7 +34,7 @@ public abstract class BasePageObject {
     private AssertionsUi assertionsUi;
     private WaitUtils waitUtils;
 
-    public BasePageObject(WebDriver driver) {
+    public UIInteractions(WebDriver driver) {
         this.driver = driver;
     }
 
