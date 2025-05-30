@@ -26,7 +26,7 @@ import org.openqa.selenium.WebDriver;
  *
  * @author josedash
  */
-public abstract class UIInteractions {
+public class UIInteractions {
 
     private final WebDriver driver;
     private CommonInteractions commonInteractions;
