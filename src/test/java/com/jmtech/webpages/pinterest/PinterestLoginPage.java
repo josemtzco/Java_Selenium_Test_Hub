@@ -23,6 +23,8 @@ public class PinterestLoginPage extends UIInteractions {
     public void navigateToLoginPage() {
         getWebDriver().get(BASE_URL);
         waitUtils().waitForSeconds(2);
+        assertions().assertTitleContains("Pinterest");
+
     }
 
     public void enterEmail(String email) {

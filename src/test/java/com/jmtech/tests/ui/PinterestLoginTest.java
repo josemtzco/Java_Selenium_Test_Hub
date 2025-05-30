@@ -13,8 +13,9 @@ public class PinterestLoginTest extends BaseUiTest {
     public void testValidLogin() {
         PinterestLoginPage loginPage = new PinterestLoginPage(getWebDriver());
         loginPage.navigateToLoginPage();
+        uiInteractions.assertions().assertTitleContains("Pinterest");
         loginPage.login("test@example.com", "validPassword123");
-        // Add assertions for successful login
+    
     }
 
 } 

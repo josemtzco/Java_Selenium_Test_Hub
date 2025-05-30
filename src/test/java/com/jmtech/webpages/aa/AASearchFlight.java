@@ -9,12 +9,14 @@ import static com.jmtech.core.webdriver.WebDriverFactory.getWebDriver;
 
 public class AASearchFlight extends UIInteractions {
 
+    //Locator store as css because if the page is constantly updated is better to fetch the element
+    // on the spot to avoid stale element errors.
     private final String FINDFLIGHT_HEADER_CSS = "#findFlightsHeader";
     private final String inputFromCityCss = "adc-auto-complete#originAirport[label-text='From'] > input[type='text']";
     private final String departDateCss = "";
 
     public AASearchFlight(WebDriver driver) {
-        super(driver);
+        super(driver); // this initializes the UIInteractions.
     }
 
     public void navigateToSearchFlight() {
@@ -39,10 +41,6 @@ public class AASearchFlight extends UIInteractions {
         WebElement inputDepartDate = elementFinder().findShadowElement(departDateCss);
         assertions().assertElementIsDisplayed(inputDepartDate);
         interactions().sendKeys(inputDepartDate, date);
-
-    }
-
-    public void setPassengerNumberDropdown(String number) {
 
     }
 

@@ -15,7 +15,6 @@ public class AmericanAirlinesFlightsTests extends BaseUiTest {
         Thread.sleep(4000);
         aaSearchFlight.assertAmericanAirlinesBookFlightPage();
         aaSearchFlight.setLeavingFromCity("MEX");
-        getWebDriver().get("https://www.aa.com/booking/find-flights");
     }
 
     @Test
