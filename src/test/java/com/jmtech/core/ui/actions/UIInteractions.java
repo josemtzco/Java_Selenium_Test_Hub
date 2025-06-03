@@ -45,12 +45,14 @@ public class UIInteractions {
         return commonInteractions;
     }
 
+
     public ElementFinder elementFinder() {
         if (elementFinder == null) {
             elementFinder = new ElementFinder(driver);
         }
         return elementFinder;
     }
+
 
     public AssertionsUi assertions() {
         if (assertionsUi == null) {
@@ -65,5 +67,4 @@ public class UIInteractions {
         }
         return waitUtils;
     }
-
 }

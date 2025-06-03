@@ -9,7 +9,7 @@ import static com.jmtech.core.webdriver.WebDriverFactory.getWebDriver;
 
 public class AASearchFlight extends UIInteractions {
 
-    //Locator store as css because if the page is constantly updated is better to fetch the element
+    //Locator store as CSS because if the page is constantly updated is better to fetch the element
     // on the spot to avoid stale element errors.
     private final String FINDFLIGHT_HEADER_CSS = "#findFlightsHeader";
     private final String inputFromCityCss = "adc-auto-complete#originAirport[label-text='From'] > input[type='text']";

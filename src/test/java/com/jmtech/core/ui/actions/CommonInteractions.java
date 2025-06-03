@@ -1,8 +1,8 @@
 package com.jmtech.core.ui.actions;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 
 public class CommonInteractions {
@@ -25,7 +25,6 @@ public class CommonInteractions {
 
     public void sendKeys(WebElement element, String text) {
         element.sendKeys(text);
-
     }
 
     public void hoverOverElement(WebElement element) {

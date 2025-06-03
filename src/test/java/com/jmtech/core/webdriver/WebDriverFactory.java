@@ -1,6 +1,9 @@
 package com.jmtech.core.webdriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -8,9 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.util.concurrent.ConcurrentHashMap;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class WebDriverFactory {
 
@@ -31,19 +32,19 @@ public class WebDriverFactory {
 
     private static WebDriver createLocalWebDriver(String browser) {
         return switch (browser.toLowerCase()) {
-            case "chrome" -> {
-                WebDriverManager.chromedriver().setup();
-                yield new ChromeDriver(CapabilitiesHelper.getChromeCapabilities());
-            }
-            case "firefox" -> {
-                WebDriverManager.firefoxdriver().setup();
-                yield new FirefoxDriver(CapabilitiesHelper.getFirefoxCapabilities());
-            }
-            case "edge" -> {
-                WebDriverManager.edgedriver().setup();
-                yield new EdgeDriver(CapabilitiesHelper.getEdgeCapabilities());
-            }
-            default -> throw new IllegalArgumentException("Unsupported browser: " + browser);
+        case "chrome" -> {
+            WebDriverManager.chromedriver().setup();
+            yield new ChromeDriver(CapabilitiesHelper.getChromeCapabilities());
+        }
+        case "firefox" -> {
+            WebDriverManager.firefoxdriver().setup();
+            yield new FirefoxDriver(CapabilitiesHelper.getFirefoxCapabilities());
+        }
+        case "edge" -> {
+            WebDriverManager.edgedriver().setup();
+            yield new EdgeDriver(CapabilitiesHelper.getEdgeCapabilities());
+        }
+        default -> throw new IllegalArgumentException("Unsupported browser: " + browser);
         };
     }
 

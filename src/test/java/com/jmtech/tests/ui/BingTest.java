@@ -16,5 +16,6 @@ public class BingTest extends BaseUiTest {
         bingPage.openBingWebsite();
         uiInteractions.assertions().assertTitleContains("Bing");
         bingPage.searchFor("Jose Martinez is the best.");
+        uiInteractions.waitUtils().sleep(5_000);
     }
-} 
+}

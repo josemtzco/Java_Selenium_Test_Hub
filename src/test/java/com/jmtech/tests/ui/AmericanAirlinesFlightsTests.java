@@ -16,22 +16,4 @@ public class AmericanAirlinesFlightsTests extends BaseUiTest {
         aaSearchFlight.assertAmericanAirlinesBookFlightPage();
         aaSearchFlight.setLeavingFromCity("MEX");
     }
-
-    @Test
-    public void verifyHomePageElement() {
-
-    }
-
-    @Test
-    public void verifyAllLinksResponse() {
-
-    }
-
-    @Test
-    public void verifySearchFlightRequiredFieldMessages() {
-
-    }
-
-    
-
 }
